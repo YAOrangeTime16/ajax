@@ -1,5 +1,7 @@
 ## AJAX API
 
+https://yaorangetime16.github.io/ajax/
+
 ### About the application
 This is a card game application which includes three simple card games. It is made with the help of the "deck of card" API returning responses by json-file.
 This application calls the API using jQuery's `$.ajax()` tecknology, and the API requires different URLs to be accessed for its json data, depending on e.g. how many cards the player wants to draw.
