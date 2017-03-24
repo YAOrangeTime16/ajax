@@ -1,0 +1,306 @@
+html {
+  width: 100%; }
+
+body {
+  background-color: #26a69a; }
+
+body, main, nav, ul, li {
+  font-family: "IM Fell DW Pica", serif;
+  margin: 0;
+  padding: 0; }
+
+main {
+  color: white; }
+
+.loading {
+  position: absolute;
+  top: 20%;
+  left: 40%; }
+
+.contents {
+  display: none; }
+
+.background-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/card.jpg");
+  background-position: center;
+  background-size: cover; }
+  @media screen and (max-width: 767px) {
+    .background-img {
+      background-img: url("../img/card-s.jpg"); } }
+
+nav {
+  margin: 0; }
+
+.ul_nav {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  justify-content: center; }
+  @media screen and (max-width: 767px) {
+    .ul_nav {
+      flex-direction: column; } }
+
+.li_nav {
+  list-style: none;
+  font-family: "IM Fell DW Pica", serif;
+  display: block;
+  width: 30%;
+  margin: auto;
+  border: 0.8px solid white;
+  text-align: center;
+  line-height: 4rem;
+  font-size: 2.8rem;
+  position: relative;
+  bottom: 5rem;
+  color: white;
+  cursor: pointer; }
+  @media screen and (max-width: 767px) {
+    .li_nav {
+      width: 90%;
+      margin: 1rem 2rem;
+      bottom: 18rem; } }
+
+#block_of_gamelist {
+  display: none; }
+
+.li_nav ul li {
+  list-style: none;
+  font-family: "IM Fell DW Pica", serif;
+  font-size: 2.4rem;
+  border-bottom: 0.8px solid #767676;
+  background-color: #1a1a1a; }
+
+.panel-body li {
+  font-size: 1.8rem;
+  line-height: 2.8rem; }
+
+.li_rule {
+  list-style-type: square; }
+
+#rules {
+  color: black; }
+
+a {
+  color: #039be5;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent; }
+
+.decoFrame {
+  width: 70%;
+  margin: 1rem 0; }
+
+.mysvg {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  bottom: 3rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 767px) {
+    .mysvg {
+      position: relative;
+      bottom: 15rem;
+      width: 100%;
+      height: 100%; } }
+  @media screen and (max-width: 767px) {
+    .mysvg {
+      margin: 0; } }
+
+.cls-1, .cls-2 {
+  fill: #fff; }
+
+.game-title {
+  margin-bottom: 5rem; }
+
+.loading2, .loading3 {
+  display: none; }
+
+.after_loading2, .after_loading3 {
+  display: none; }
+
+.cardTable {
+  position: relative;
+  top: 10rem; }
+  @media screen and (max-width: 767px) {
+    .cardTable {
+      top: 5rem; } }
+
+/* ===============
+   Game 1
+   ===============*/
+#getter {
+  height: 100vh;
+  background-image: url("../img/background-one.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+figcaption {
+  font-size: 1.5rem; }
+
+.content_play {
+  height: 55rem; }
+  @media screen and (max-width: 960px) {
+    .content_play {
+      height: 50rem; } }
+  @media screen and (max-width: 767px) {
+    .content_play {
+      height: 40rem; } }
+
+#getter_cards {
+  display: flex;
+  justify-content: center; }
+
+#card1, #card2 {
+  height: 35rem;
+  margin: 0 1rem; }
+  @media screen and (max-width: 960px) {
+    #card1, #card2 {
+      height: 25rem; } }
+  @media screen and (max-width: 767px) {
+    #card1, #card2 {
+      height: 20rem; } }
+  @media screen and (max-width: 767px) {
+    #card1, #card2 {
+      margin: 0; } }
+  #card1 .card_img, #card1 figcaption, #card2 .card_img, #card2 figcaption {
+    margin: 1rem auto; }
+
+.card_img {
+  margin: 0 1rem; }
+  @media screen and (max-width: 960px) {
+    .card_img {
+      width: auto; } }
+  @media screen and (max-width: 767px) {
+    .card_img {
+      width: 70%; } }
+
+#c1Fig, #c2Fig {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: 3rem; }
+
+#counter {
+  font-size: 20rem;
+  position: absolute;
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    #counter {
+      font-size: 15rem; } }
+
+#reload {
+  display: none;
+  margin-left: 3rem; }
+
+#message {
+  font-size: 2rem;
+  position: relative;
+  bottom: 10rem; }
+  @media screen and (max-width: 767px) {
+    #message {
+      display: none; } }
+
+/* ===============
+   Game 2
+   ===============*/
+#twentyone {
+  height: 100vh;
+  background-image: url("../img/background-two.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.content_play2 {
+  height: 55rem; }
+  @media screen and (max-width: 960px) {
+    .content_play2 {
+      height: 45rem; } }
+  @media screen and (max-width: 767px) {
+    .content_play2 {
+      height: 30rem; } }
+
+.btn {
+  margin: 0 1rem; }
+
+.optionalButton {
+  display: flex;
+  justify-content: center;
+  margin: 3rem; }
+
+.bjFigure {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 3rem; }
+
+.bj_img {
+  margin: 0 1rem; }
+  @media screen and (max-width: 960px) {
+    .bj_img {
+      width: auto; } }
+  @media screen and (max-width: 767px) {
+    .bj_img {
+      width: 70%; } }
+
+#bj_counter {
+  font-size: 20rem;
+  position: absolute;
+  top: 5rem;
+  margin: 0 auto;
+  display: none; }
+  @media screen and (max-width: 767px) {
+    #bj_counter {
+      font-size: 12rem; } }
+
+#reload_bj {
+  display: none;
+  margin-left: 3rem; }
+
+/* ===============
+   Game 3
+   ===============*/
+#fivecard {
+  height: 100vh;
+  background-image: url("../img/background-three.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+label {
+  cursor: pointer; }
+
+.poker_img {
+  width: 100%; }
+  @media screen and (max-width: 767px) {
+    .poker_img {
+      width: 100%; } }
+
+#reload2 {
+  display: none; }
+
+#poker_cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem; }
+  @media screen and (max-width: 767px) {
+    #poker_cards {
+      height: 200%;
+      flex-wrap: wrap; } }
+
+#btn_exchange, #result_btn {
+  margin-top: 3rem; }
+
+#pk_result {
+  font-size: 18rem;
+  position: absolute;
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    #pk_result {
+      font-size: 15rem; } }
+
+/*# sourceMappingURL=main.css.map */
