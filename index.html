@@ -3,7 +3,7 @@
     <head>
         <meta charset=utf-8>
         <!--Responsive-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <title>Web API</title>
         <!-- CSS Stylesheets -->
         <link type="text/css" rel="stylesheet" href="css/normalize.css">
@@ -52,7 +52,7 @@
                                         <li class="li_rule">Otherwise, you get <strong>1</strong> point</li>
                                     </ol>
                                 </li>
-                                <li>Your total points come up after 5 plays (5 clicks)</li>
+                                <li>Your total points come up after 5 draws (5 clicks)</li>
                             </ol>
                             <a id="anchor_g1">Play This Game</a>
                         </div>
@@ -72,6 +72,7 @@
                                         <li class="li_rule">The others count face value</li>
                                     </ol>
                                 </li>
+                                <li>If the score excesses over 21, it returns <strong>Bust</strong></li>
                             </ol>
                             <a id="anchor_g2">Play This Game</a>
                         </div>
@@ -125,7 +126,7 @@
                     <div class="cardTable-getter container col-xs-12 col-sm-12 col-md-12" id="getter_cards">
                         <div id="card1" class="row"></div>
                         <div id="card2" class="row"></div>
-                        <div class="col-md-12 text-center" id="counter"></div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="counter"></div>
                     </div>
                 </article>
             <!-- Twenty One -->

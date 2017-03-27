@@ -209,7 +209,7 @@ figcaption {
       top: 7rem; } }
   @media screen and (max-width: 767px) {
     #counter {
-      left: 2rem; } }
+      right: 2rem; } }
 
 #reload {
   display: none;

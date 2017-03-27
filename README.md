@@ -21,8 +21,7 @@ I used this to get results of the third game (Five Card Draw), otherwise the cod
 |Mockup, images|Photoshop|
 |SVG|Illustrator|
 |Coding|Brackets|
-|CSS|Sass|
-|CSS Framework|Bootstrap|
+|CSS|Sass, Bootstrap|
 |Javascript|jQuery|
 |extra API|npm browserify|
 |Version Control|GitHub|
