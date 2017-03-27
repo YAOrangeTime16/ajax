@@ -34,7 +34,7 @@
                 </ul>
             </nav>
         </header>
-        <main class="container">
+        <main class="container-fluid">
             <section id="rules" class="row">
                 <div  class="content_rule col-md-12">
                     <h2  class="page-header">Rules of The Games</h2>
@@ -81,45 +81,73 @@
                             <h4>Five Card Draw</h4>
                         </div>
                         <div class="panel-body">
+                            <ol>
+                                <li>Five Card Draw is one of variants of poker</li>
+                                <li>You get five cards in your hand</li>
+                                <li>Check cards which you wish to replace with new cards, then click "Draw"</li>
+                                <li>When you click "result", you get the result of your hand
+                                    <ol>
+                                        <li class="li_rule">Royal flush (less than 0.001%)</li>
+                                        <li class="li_rule">Straight flush (less than 0.002%)
+                                        </li>
+                                        <li class="li_rule">Four of a kind (0.02%)</li>
+                                        <li class="li_rule">Full house (0.14%)</li>
+                                        <li class="li_rule">Flush (0.20%)</li>
+                                        <li class="li_rule">Straight (0.39%)</li>
+                                        <li class="li_rule">Three of a kind (2.11%)</li>
+                                        <li class="li_rule">Two pair (4.75%)</li>
+                                        <li class="li_rule">Pair (42.30%)</li>
+                                        <li class="li_rule">High card (50.10%)</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <p>(%) stands for frequency of 5-card poker hands (source from wikipedia)</p>
                             <a id="anchor_g3">Play This Game</a>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="gameSpace" class="row">
-                <h2 class="page-header">Select Game</h2>
-                <!-- GETTER -->
-                <article id="getter" class="content_play col-xs-12 col-sm-12 col-md-12">
+                <div class="col-md-12">
+                    <h2 class="page-header">Select Game</h2>
+                </div>
+            <!-- GETTER -->
+                <article id="getter" class="content_play col-xs-12 col-sm-12 col-md-12 container-fluid">
                     <h3 class="game-title">Point Getter</h3>
                     <button type="button" id="open" class="btn btn-success">Draw Cards</button>
                     <input type="button" class="btn btn-default" id="reload" value="New Game">
-                    <div class="cardTable row" id="getter_cards">
-                        <div id="card1"></div>
-                        <div id="card2"></div>
+                    <div class="loading1">
+                        <img src="img/loading.gif" alt="loading...">Loading cards...
+                    </div>
+                    <div class="message-position row">
+                            <div id="message" class="col-md-12 text-center"></div>
+                    </div>
+                    <div class="cardTable-getter container col-xs-12 col-sm-12 col-md-12" id="getter_cards">
+                        <div id="card1" class="row"></div>
+                        <div id="card2" class="row"></div>
                         <div class="col-md-12 text-center" id="counter"></div>
                     </div>
-                    <div id="message"></div>
                 </article>
-                <!-- Twenty One -->
-                <article id="twentyone" class="content_play2 col-xs-12 col-sm-12 col-md-12">
+            <!-- Twenty One -->
+                <article id="twentyone" class="content_play2 col-xs-12 col-sm-12 col-md-12 container-fluid">
                     <h3 class="game-title">Twenty One</h3>
                     <input type="button" id="open_bj" class="btn btn-success" value="Draw Cards">
                     <input type="button" class="btn btn-default" id="reload_bj" value="New Game">
-                    <div class="cardTable">
-                        <div class="loading2">Loading Cards...</div>
-                        <div id="bj_cards" class="bjFigure after_loading2"></div>
+                    <div class="loading2"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
+                    <div class="cardTable-bj row col-xs-12 col-sm-12 col-md-12 after_loading2">
+                        <div id="bj_cards" class="bjFigure"></div>
                         <div class="col-md-12 text-center" id="bj_counter"></div>
                         <div class="optionalButton after_loading2"></div>
                     </div>
                 </article>
-                <!-- 3 FIVE CARD DRAW -->
-                <article id="fivecard" class="content_play col-xs-12 col-sm-12 col-md-12 container">
+            <!-- 3 FIVE CARD DRAW -->
+                <article id="fivecard" class="content_play col-xs-12 col-sm-12 col-md-12 container-fluid">
                     <h3 class="game-title">Five Card Draw</h3>
                     <input type="button" id="start" class="btn btn-success" value="start">
                     <input type="button" class="btn btn-default" id="reload2" value="New Game">
-                    <div class="cardTable">
-                        <div class="loading3">Loading Cards...</div>
-                        <div id="poker_cards" class="row after_loading3">
+                    <div class="loading3"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
+                    <div class="cardTable-poker after_loading3">
+                        <div id="poker_cards" class="row">
                         </div>
                         <div class="col-md-12 text-center" id="pk_result">
                         </div>
@@ -129,13 +157,18 @@
                     </div>
                 </article>
             </section>
+            <button type="button" class="btn-up glyphicon-btn btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn-down glyphicon-btn btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+            </button>
         </main>
         <footer>
         </footer>
         <script src="js/script.js"></script>
         <script src="js/script_blackjack.js"></script>
         <script src="js/bundle.js"></script>
-
-        <script src="node_modules/pokersolver/pokersolver.js"></script>
+        <script src="js/pokersolver.js"></script>
     </body>
 </html>

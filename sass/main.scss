@@ -20,10 +20,6 @@ body, main, nav, ul, li {
     margin: 0;
     padding: 0;}
 
-main{
-    color: white;
-}
-
 .loading{
     position: absolute;
     top: 20%;
@@ -35,6 +31,7 @@ main{
 }
 
 .background-img {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url('../img/card.jpg');
@@ -43,6 +40,7 @@ main{
     @include max-screen ($breakpoint-mobile){
         background-img: url('../img/card-s.jpg');
     }
+    z-index: 1;
 }
 
 nav {
@@ -99,10 +97,6 @@ nav {
     list-style-type: square;
 }
 
-#rules{
-    color: black;
-}
-
 a {
   color:$lightblue;
     cursor: pointer;
@@ -139,29 +133,35 @@ a {
 }
 
 .game-title{
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
-.loading2,.loading3{
+.loading1, .loading2,.loading3, {
     display:none;
+    position: absolute;
+    top: 15rem;
+    left: 3rem;
 }
-.after_loading2,.after_loading3{
+after_loading1, .after_loading2,.after_loading3{
     display: none;
-}
-
-.cardTable{
-    position: relative;
-    top: 10rem;
-    @include max-screen ($breakpoint-mobile){
-        top: 5rem;
-    }
 }
 
 /* ===============
    Game 1
    ===============*/
+.cardTable-getter{
+    position: absolute;
+    top: 2rem;
+    @include max-screen ($breakpoint-mobile){
+        top: 0;
+    }
+}
 #getter{
     height: 100vh;
-    background-image: url('../img/background-one.png');
+    background-image: url('../img/background-one-w.png');
+    @include max-screen ($breakpoint-mobile){
+        background-image: url('../img/background-one-mb.png');
+        background-position: left;
+    }
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -179,6 +179,18 @@ figcaption {
     @include max-screen ($breakpoint-mobile){
         height: 40rem;
     }
+}
+.btn-up{
+    position: fixed;
+    bottom: 8rem;
+    right: 0;
+    z-index: 0;
+}
+
+.btn-down{
+    position: fixed;
+    bottom: 3rem;
+    right: 0;
 }
 
 #getter_cards{
@@ -220,13 +232,16 @@ figcaption {
 }
 
 #counter {
-    font-size: 20rem;
-    @include max-screen ($breakpoint-mobile){
-        font-size: 15rem;
-    }
     position: absolute;
-    margin: 0 auto;
-
+    top: 15rem;
+    font-size: 20rem;
+        @include max-screen ($breakpoint-mobile){
+            font-size: 15rem;
+            top: 7rem;
+        }
+        @include max-screen ($breakpoint-mobile){
+        left: 2rem;
+    }
 }
 
 #reload {
@@ -235,21 +250,27 @@ figcaption {
 }
 
 #message{
-    font-size: 2rem;
-    position: relative;
-    bottom: 10rem;
-    @include max-screen ($breakpoint-mobile){
-        display: none;
-    }
+    font-size: 5rem;
+    height: 20%;
 }
 
 /* ===============
    Game 2
    ===============*/
+.cardTable-bj{
+    position: absolute;
+    top: 10rem;
+    @include max-screen ($breakpoint-mobile){
+        top: 15rem;
+    }
+}
 #twentyone{
     height: 100vh;
-    background-image: url('../img/background-two.png');
-    background-position: right;
+    background-image: url('../img/background-two-w.png');
+    background-position: center;
+    @include max-screen ($breakpoint-mobile){
+        background-image: url('../img/background-two-mb.png');
+    }
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -272,6 +293,7 @@ figcaption {
 }
 
 .bjFigure{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -282,6 +304,7 @@ figcaption {
     margin: 0 1rem;
     @include max-screen ($breakpoint-tablet){
         width: auto;
+        margin-top: 1rem;
     }
     @include max-screen ($breakpoint-mobile){
         width: 70%;
@@ -293,12 +316,6 @@ figcaption {
         @include max-screen ($breakpoint-mobile){
             font-size: 12rem;
         }
-    position: absolute;
-    top: 5rem;
-        @include max-screen ($breakpoint-mobile){
-         
-        }
-    margin: 0 auto;
     display: none;
 }
 
@@ -310,10 +327,21 @@ figcaption {
 /* ===============
    Game 3
    ===============*/
+.cardTable-poker{
+    position: absolute;
+    top: 20rem;
+    @include max-screen ($breakpoint-mobile){
+        top: 18rem;
+    }
+}
+
 #fivecard{
     height: 100vh;
-    background-image: url('../img/background-three.png');
+    background-image: url('../img/background-three-w.png');
     background-position: right;
+    @include max-screen ($breakpoint-mobile){
+        background-image: url('../img/background-three-mb.png');
+    }
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -331,26 +359,31 @@ label {
 #reload2 {
     display: none;
 }
+
 #poker_cards {
     display: flex;
     justify-content: space-around;
         @include max-screen ($breakpoint-mobile){
-            height: 200%;
             flex-wrap: wrap;
+            position: relative;
+            top: -3rem;
         }
-    margin-top: 3rem;
 }
 
 #btn_exchange, #result_btn {
     margin-top: 3rem;
+        @include max-screen ($breakpoint-mobile){
+            margin-top: 0;
+        }
 }
 
 #pk_result {
     font-size: 18rem;
+    display: none;
+    text-shadow: 0 0 5px white;
         @include max-screen ($breakpoint-mobile){
-            font-size: 15rem;
+            font-size: 10rem;
         }
-    position: absolute;
     margin: 0 auto;
 
 }

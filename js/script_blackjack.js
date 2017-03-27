@@ -48,7 +48,7 @@ $(function(){
                         </figure>`;
             console.log(printToHtml);
         });
-        cardTable.hide().delay(1000).html(printToHtml);
+        cardTable.delay(1000).html(printToHtml);
         
         //Show Buttons at the same time
         let buttons=`<input class="btn btn-default" id="btn_drawone" type="button" value="Add One More Card">
