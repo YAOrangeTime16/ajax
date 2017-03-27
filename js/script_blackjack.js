@@ -46,7 +46,7 @@ $(function(){
             printToHtml+=`<figure>
                             <img class="bj_img" src="${card.image}" alt="${card.code}">
                         </figure>`;
-            console.log(printToHtml);
+            return printToHtml;
         });
         cardTable.delay(1000).html(printToHtml);
         

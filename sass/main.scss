@@ -240,7 +240,7 @@ figcaption {
             top: 7rem;
         }
         @include max-screen ($breakpoint-mobile){
-        left: 2rem;
+        right: 2rem;
     }
 }
 
