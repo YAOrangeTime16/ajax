@@ -14,7 +14,7 @@ $(function(){
     //start a poker game
     //Get deck ID... in this case 1 deck is used for each play
     $('#start').on('click', function(){
-        $(this).hide('slow');
+        $(this).delay(800).fadeOut('slow');
         $('.loading3').fadeIn('slow').delay(800).fadeOut('slow');
         $('.after_loading3, #reload2').delay(1500).fadeIn();
     }).on('click', function(){
@@ -47,7 +47,7 @@ $(function(){
     let showPlayersHand=res=>{
         cardsArray=res.cards;
         cardsArray.map(card=>{
-            cardsHTML+=`<div class="col-xs-2 col-sm-2 col-md-2">
+            cardsHTML+=`<div class="col-xs-4 col-sm-4 col-md-2">
                             <label for="${card.code}">
                                 <img class="poker_img" src='${card.image}' alt='${card.code}'></img>
                                 <input id="${card.code}" type="checkbox" class="checkbox"  value="${card.code}">
@@ -140,7 +140,7 @@ $(function(){
         });
         
         finalCardsArray.map(card=>{
-            cardsHTML+=`<div class="col-xs-2 col-sm-2 col-md-2">
+            cardsHTML+=`<div class="col-xs-4 col-sm-4 col-md-2">
                             <img class="poker_img" src='${card.image}' alt='${card.code}'></img>
                         </div>`;
             $('#poker_cards').html(cardsHTML);
@@ -151,6 +151,7 @@ $(function(){
         
         $('#result_btn').on('click', function(){
             $(this).hide();
+            $('#poker_cards').fadeOut('fast');
         })
             .on('click', getResult)
             .on('click', printResult);
@@ -180,13 +181,7 @@ $(function(){
     };
     
     let printResult=()=>{
-        $('#pk_result').hide().delay(800).html(yourResult).fadeIn('slow');
+        $('#pk_result').html(yourResult).hide().delay(1000).fadeIn('slow');
     };
 });
-
-
-
-//To change "prevObject" to an array
-// http://qiita.com/kazu56/items/0d49adc864bed0ed4fa2 (Japanese Site)
-//$.makeArray();
 },{}]},{},[1]);

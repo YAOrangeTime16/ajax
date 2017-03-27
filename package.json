@@ -15,4 +15,3 @@
   }
 }
 
-browserify ./js/script_poker.js -o bundle.js
