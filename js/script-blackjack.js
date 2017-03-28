@@ -3,16 +3,16 @@ $(function(){
     let points=0;
     let cardArray;
     let printToHtml="";
-    let cardTable=$('#bj_cards');
+    let cardTable=$('#bj-cards');
     let btn_option=$('.optionalButton');
     let newCard;
     let result;
     
     //start game
-    $('#open_bj').on('click', function(){
+    $('#open-bj').on('click', function(){
         $(this).fadeOut();
         $('.loading2').fadeIn('slow').delay(800).fadeOut('slow');
-        $('.after_loading2').delay(2000).fadeIn();
+        $('.after-loading2').delay(2000).fadeIn();
     }).on('click', function(){
         $.ajax({
             method: 'GET',
@@ -20,7 +20,8 @@ $(function(){
             dataType: 'json'
         })
         .done(getDeckId)
-        .done(drawTwoCards);
+        .done(drawTwoCards)
+        .fail(err=>err);
     });
     
     
@@ -29,6 +30,7 @@ $(function(){
         return deckID;
     };
     
+    //Draw cards based on the "deckID"
     let drawTwoCards=()=>{
         let drawTwoUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=2`;
         $.ajax({
@@ -37,65 +39,42 @@ $(function(){
             dataType: 'json'
         })
         .done(showHand)
-        .done(countPoint);
+        .done(addButtons)
+        .done(countPoint)
+        .fail(err=>err);
     };
 
     let showHand=(res)=>{
         cardArray=res.cards;
         cardArray.map(card=>{
             printToHtml+=`<figure>
-                            <img class="bj_img" src="${card.image}" alt="${card.code}">
+                            <img class="bj-img" src="${card.image}" alt="${card.code}">
                         </figure>`;
             return printToHtml;
         });
-        cardTable.delay(1000).html(printToHtml);
-        
-        //Show Buttons at the same time
-        let buttons=`<input class="btn btn-default" id="btn_drawone" type="button" value="Add One More Card">
-                    <input class="btn btn-info" id="btn_done" type="button" value="Done">`;
+        cardTable.hide().delay(1200).fadeIn().html(printToHtml); 
+    };
+    
+    let addButtons=()=>{
+        //Show Buttons under player's hand
+        let buttons=`<input class="btn btn-default" id="btn-drawone" type="button" value="Add One More Card">
+                    <input class="btn btn-info" id="btn-done" type="button" value="Done">`;
         btn_option.hide().delay(1200).html(buttons);
-        //Button functions
-        $('#btn_drawone').on('click', drawOneMore);
-        $('#btn_done')
-        .on('click', showResult)
-        .on('click', function(){
-            $('#reload_bj').delay(2000).fadeIn('slow');
-        })
-    };
-    
-    $('#reload_bj').on('click', function(){
-        location.reload(false);
-    });
-    
-    //If the player has added cards, these functions should be called
-    let drawOneMore=()=>{
-        let drawOneUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`;
-        $.ajax({
-            method: 'GET',
-            url: drawOneUrl,
-            dataType: 'json'
-        })
-        .done(res=>{
-            newCard=res.cards[0];
-            cardArray.push(newCard);
-            return cardArray;
-        })
-        .done(showFinalCards)
-        .done(countFinalPoint);
-    };
-    
-    let showFinalCards=()=>{
-            let appendNew=`<figure>
-                            <img class="bj_img" src="${newCard.image}" alt="${newCard.code}">
-                        </figure>`;
-        cardTable.append(appendNew);
+        //Functions of the above buttons
+        $('#btn-drawone')
+            .on('click', drawOneMore);
+        $('#btn-done')
+            .on('click', showResult)
+            .on('click', function(){
+                $('#reload-bj').delay(2000).fadeIn('slow');
+            });
     };
     
     let countPoint=()=>{
         cardArray.map(item=>{
             if(isNaN(item.value)){
                 if (item.value==="ACE"){
-                    points+=1;
+                    points+=11;
                 }else if(item.value==="JACK"){
                     points+=10;
                 }else if(item.value==="QUEEN"){
@@ -117,11 +96,35 @@ $(function(){
         });
     };
     
+    //If the player adds a card, these functions should be called
+    let drawOneMore=()=>{
+        let drawOneUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`;
+        $.ajax({
+            method: 'GET',
+            url: drawOneUrl,
+            dataType: 'json'
+        })
+        .done(res=>{
+            newCard=res.cards[0];
+            cardArray.push(newCard);
+            return cardArray;
+        })
+        .done(showFinalCards)
+        .done(countFinalPoint);
+    };
+    
+    let showFinalCards=()=>{
+            let appendNew=`<figure>
+                            <img class="bj-img" src="${newCard.image}" alt="${newCard.code}">
+                        </figure>`;
+        cardTable.append(appendNew);
+    };
+    
     let countFinalPoint=()=>{
         //Replacing picture cards with values and counting the score
         if(isNaN(newCard.value)){
             if (newCard.value==="ACE"){
-                    points+=1;
+                    points+=11;
             }else if(newCard.value==="JACK"){
                 points+=10;
             }else if(newCard.value==="QUEEN"){
@@ -143,8 +146,12 @@ $(function(){
     };
     
     let showResult=()=>{
-       $('.optionalButton, #bj_cards').fadeOut();
-        $('#bj_counter').html(result).delay(700).fadeIn('slow');
+       $('.optionalButton, #bj-cards').fadeOut();
+        $('#bj-counter').html(result).delay(700).fadeIn('slow');
     };
+    
+    $('#reload-bj').on('click', function(){
+        location.reload(false);
+    });
         
 });

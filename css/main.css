@@ -9,14 +9,6 @@ body, main, nav, ul, li {
   margin: 0;
   padding: 0; }
 
-.loading {
-  position: absolute;
-  top: 20%;
-  left: 40%; }
-
-.contents {
-  display: none; }
-
 .background-img {
   position: relative;
   width: 100%;
@@ -106,53 +98,26 @@ a {
     .mysvg {
       margin: 0; } }
 
+/* ===============
+    SVG EXTERNAL FILE
+   ===============*/
 .cls-1, .cls-2 {
   fill: #fff; }
 
+/* ===============
+    FOR ALL GAMES
+   ===============*/
 .game-title {
   margin-bottom: 3rem; }
 
 .loading1, .loading2, .loading3 {
   display: none;
   position: absolute;
-  top: 15rem;
+  top: 13rem;
   left: 3rem; }
 
 after_loading1, .after_loading2, .after_loading3 {
   display: none; }
-
-/* ===============
-   Game 1
-   ===============*/
-.cardTable-getter {
-  position: absolute;
-  top: 2rem; }
-  @media screen and (max-width: 767px) {
-    .cardTable-getter {
-      top: 0; } }
-
-#getter {
-  height: 100vh;
-  background-image: url("../img/background-one-w.png");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover; }
-  @media screen and (max-width: 767px) {
-    #getter {
-      background-image: url("../img/background-one-mb.png");
-      background-position: left; } }
-
-figcaption {
-  font-size: 1.5rem; }
-
-.content_play {
-  height: 55rem; }
-  @media screen and (max-width: 960px) {
-    .content_play {
-      height: 50rem; } }
-  @media screen and (max-width: 767px) {
-    .content_play {
-      height: 40rem; } }
 
 .btn-up {
   position: fixed;
@@ -165,9 +130,38 @@ figcaption {
   bottom: 3rem;
   right: 0; }
 
-#getter_cards {
+/* ===============
+   Game 1
+   ===============*/
+#getter {
+  height: 100vh;
+  background-image: url("../img/background-one-w.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  @media screen and (max-width: 767px) {
+    #getter {
+      background-image: url("../img/background-one-mb.png");
+      background-position: left; } }
+
+#cardTable-getter {
+  position: absolute;
+  top: 22rem;
   display: flex;
   justify-content: center; }
+
+#counter {
+  height: 50%;
+  position: absolute;
+  bottom: 5rem;
+  font-size: 20rem; }
+  @media screen and (max-width: 767px) {
+    #counter {
+      font-size: 15rem;
+      bottom: -3rem; } }
+
+figcaption {
+  font-size: 1.5rem; }
 
 #card1, #card2 {
   height: 35rem;
@@ -184,13 +178,13 @@ figcaption {
   #card1 .card_img, #card1 figcaption, #card2 .card_img, #card2 figcaption {
     margin: 1rem auto; }
 
-.card_img {
+.card-img {
   margin: 0 1rem; }
   @media screen and (max-width: 960px) {
-    .card_img {
+    .card-img {
       width: auto; } }
   @media screen and (max-width: 767px) {
-    .card_img {
+    .card-img {
       width: 70%; } }
 
 #c1Fig, #c2Fig {
@@ -199,36 +193,18 @@ figcaption {
   align-content: center;
   margin-top: 3rem; }
 
-#counter {
-  position: absolute;
-  top: 15rem;
-  font-size: 20rem; }
-  @media screen and (max-width: 767px) {
-    #counter {
-      font-size: 15rem;
-      top: 7rem; } }
-  @media screen and (max-width: 767px) {
-    #counter {
-      right: 2rem; } }
-
 #reload {
   display: none;
   margin-left: 3rem; }
 
 #message {
   font-size: 5rem;
-  height: 20%; }
+  height: 10%;
+  margin-top: 3rem; }
 
 /* ===============
    Game 2
    ===============*/
-.cardTable-bj {
-  position: absolute;
-  top: 10rem; }
-  @media screen and (max-width: 767px) {
-    .cardTable-bj {
-      top: 15rem; } }
-
 #twentyone {
   height: 100vh;
   background-image: url("../img/background-two-w.png");
@@ -239,14 +215,12 @@ figcaption {
     #twentyone {
       background-image: url("../img/background-two-mb.png"); } }
 
-.content_play2 {
-  height: 55rem; }
-  @media screen and (max-width: 960px) {
-    .content_play2 {
-      height: 45rem; } }
+.cardTable-bj {
+  position: absolute;
+  top: 10rem; }
   @media screen and (max-width: 767px) {
-    .content_play2 {
-      height: 30rem; } }
+    .cardTable-bj {
+      top: 15rem; } }
 
 .btn {
   margin: 0 1rem; }
@@ -263,37 +237,33 @@ figcaption {
   justify-content: center;
   padding-left: 3rem; }
 
-.bj_img {
+.bj-img {
   margin: 0 1rem; }
   @media screen and (max-width: 960px) {
-    .bj_img {
+    .bj-img {
       width: auto;
       margin-top: 1rem; } }
   @media screen and (max-width: 767px) {
-    .bj_img {
+    .bj-img {
       width: 70%; } }
 
-#bj_counter {
+#bj-counter {
   font-size: 20rem;
   display: none; }
   @media screen and (max-width: 767px) {
-    #bj_counter {
-      font-size: 12rem; } }
+    #bj-counter {
+      font-size: 7rem; } }
+  @media screen and (max-width: 360px) {
+    #bj-counter {
+      font-size: 5rem; } }
 
-#reload_bj {
+#reload-bj {
   display: none;
   margin-left: 3rem; }
 
 /* ===============
    Game 3
    ===============*/
-.cardTable-poker {
-  position: absolute;
-  top: 20rem; }
-  @media screen and (max-width: 767px) {
-    .cardTable-poker {
-      top: 18rem; } }
-
 #fivecard {
   height: 100vh;
   background-image: url("../img/background-three-w.png");
@@ -304,40 +274,56 @@ figcaption {
     #fivecard {
       background-image: url("../img/background-three-mb.png"); } }
 
+.cardTable-poker {
+  position: absolute;
+  top: 20rem; }
+  @media screen and (max-width: 767px) {
+    .cardTable-poker {
+      top: 20rem; } }
+
 label {
   cursor: pointer; }
 
-.poker_img {
-  width: 100%; }
+.poker-img {
+  width: 90%; }
+  @media screen and (max-width: 960px) {
+    .poker-img {
+      width: 80%; } }
   @media screen and (max-width: 767px) {
-    .poker_img {
+    .poker-img {
+      width: 60%; } }
+  @media screen and (max-width: 622px) {
+    .poker-img {
+      width: 80%; } }
+  @media screen and (max-width: 520px) {
+    .poker-img {
       width: 100%; } }
 
 #reload2 {
   display: none; }
 
-#poker_cards {
+#poker-cards {
   display: flex;
   justify-content: space-around; }
   @media screen and (max-width: 767px) {
-    #poker_cards {
+    #poker-cards {
       flex-wrap: wrap;
       position: relative;
       top: -3rem; } }
 
-#btn_exchange, #result_btn {
+#btn-exchange, #result-btn {
   margin-top: 3rem; }
   @media screen and (max-width: 767px) {
-    #btn_exchange, #result_btn {
+    #btn-exchange, #result-btn {
       margin-top: 0; } }
 
-#pk_result {
+#pk-result {
   font-size: 18rem;
   display: none;
   text-shadow: 0 0 5px white;
   margin: 0 auto; }
   @media screen and (max-width: 767px) {
-    #pk_result {
-      font-size: 10rem; } }
+    #pk-result {
+      font-size: 7rem; } }
 
 /*# sourceMappingURL=main.css.map */

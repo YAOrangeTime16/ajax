@@ -20,16 +20,6 @@ body, main, nav, ul, li {
     margin: 0;
     padding: 0;}
 
-.loading{
-    position: absolute;
-    top: 20%;
-    left: 40%;
-}
-
-.contents{
-    display:none;
-}
-
 .background-img {
     position: relative;
     width: 100%;
@@ -127,10 +117,16 @@ a {
     display: flex;
     justify-content: center;
 }
-// Syle for SVG file
+/* ===============
+    SVG EXTERNAL FILE
+   ===============*/
 .cls-1, .cls-2{
     fill:#fff;
 }
+
+/* ===============
+    FOR ALL GAMES
+   ===============*/
 
 .game-title{
     margin-bottom: 3rem;
@@ -138,48 +134,13 @@ a {
 .loading1, .loading2,.loading3, {
     display:none;
     position: absolute;
-    top: 15rem;
+    top: 13rem;
     left: 3rem;
 }
 after_loading1, .after_loading2,.after_loading3{
     display: none;
 }
 
-/* ===============
-   Game 1
-   ===============*/
-.cardTable-getter{
-    position: absolute;
-    top: 2rem;
-    @include max-screen ($breakpoint-mobile){
-        top: 0;
-    }
-}
-#getter{
-    height: 100vh;
-    background-image: url('../img/background-one-w.png');
-    @include max-screen ($breakpoint-mobile){
-        background-image: url('../img/background-one-mb.png');
-        background-position: left;
-    }
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-figcaption {
-    font-size:1.5rem;
-}
-
-.content_play {
-    height: 55rem;
-    @include max-screen ($breakpoint-tablet){
-        height: 50rem;
-    }
-    @include max-screen ($breakpoint-mobile){
-        height: 40rem;
-    }
-}
 .btn-up{
     position: fixed;
     bottom: 8rem;
@@ -193,10 +154,43 @@ figcaption {
     right: 0;
 }
 
-#getter_cards{
+/* ===============
+   Game 1
+   ===============*/
+#getter{
+    height: 100vh;
+    background-image: url('../img/background-one-w.png');
+        @include max-screen ($breakpoint-mobile){
+            background-image: url('../img/background-one-mb.png');
+            background-position: left;
+        }
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cardTable-getter{
+    position: absolute;
+    top: 22rem;
     display: flex;
     justify-content: center;
 }
+
+#counter {
+    height: 50%;
+    position: absolute;
+    bottom: 5rem;
+    font-size: 20rem;
+        @include max-screen ($breakpoint-mobile){
+            font-size: 15rem;
+            bottom: -3rem;
+        }
+}
+
+figcaption {
+    font-size:1.5rem;
+}
+
 #card1, #card2 {
     height: 35rem;
     @include max-screen ($breakpoint-tablet){
@@ -214,7 +208,7 @@ figcaption {
     }
 }
 
-.card_img {
+.card-img {
     margin: 0 1rem;
     @include max-screen ($breakpoint-tablet){
         width: auto;
@@ -231,19 +225,6 @@ figcaption {
     margin-top: 3rem;
 }
 
-#counter {
-    position: absolute;
-    top: 15rem;
-    font-size: 20rem;
-        @include max-screen ($breakpoint-mobile){
-            font-size: 15rem;
-            top: 7rem;
-        }
-        @include max-screen ($breakpoint-mobile){
-        right: 2rem;
-    }
-}
-
 #reload {
     display: none;
     margin-left: 3rem;
@@ -251,19 +232,13 @@ figcaption {
 
 #message{
     font-size: 5rem;
-    height: 20%;
+    height: 10%;
+    margin-top: 3rem;
 }
 
 /* ===============
    Game 2
    ===============*/
-.cardTable-bj{
-    position: absolute;
-    top: 10rem;
-    @include max-screen ($breakpoint-mobile){
-        top: 15rem;
-    }
-}
 #twentyone{
     height: 100vh;
     background-image: url('../img/background-two-w.png');
@@ -274,15 +249,15 @@ figcaption {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.content_play2 {
-    height: 55rem;
-    @include max-screen ($breakpoint-tablet){
-        height: 45rem;
-    }
+
+.cardTable-bj{
+    position: absolute;
+    top: 10rem;
     @include max-screen ($breakpoint-mobile){
-        height: 30rem;
+        top: 15rem;
     }
 }
+
 .btn {
     margin: 0 1rem;
 }
@@ -300,7 +275,7 @@ figcaption {
     padding-left: 3rem;
 }
 
-.bj_img {
+.bj-img {
     margin: 0 1rem;
     @include max-screen ($breakpoint-tablet){
         width: auto;
@@ -311,15 +286,18 @@ figcaption {
     }
 }
 
-#bj_counter {
+#bj-counter {
     font-size: 20rem;
         @include max-screen ($breakpoint-mobile){
-            font-size: 12rem;
+            font-size: 7rem;
+        }
+        @include max-screen (360px){
+            font-size: 5rem;
         }
     display: none;
 }
 
-#reload_bj {
+#reload-bj {
     display: none;
     margin-left: 3rem;
 }
@@ -327,31 +305,41 @@ figcaption {
 /* ===============
    Game 3
    ===============*/
-.cardTable-poker{
-    position: absolute;
-    top: 20rem;
-    @include max-screen ($breakpoint-mobile){
-        top: 18rem;
-    }
-}
-
 #fivecard{
     height: 100vh;
     background-image: url('../img/background-three-w.png');
     background-position: right;
-    @include max-screen ($breakpoint-mobile){
-        background-image: url('../img/background-three-mb.png');
-    }
+        @include max-screen ($breakpoint-mobile){
+            background-image: url('../img/background-three-mb.png');
+        }
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.cardTable-poker{
+    position: absolute;
+    top: 20rem;
+    @include max-screen ($breakpoint-mobile){
+        top: 20rem;
+    }
+}
+
 label {
     cursor: pointer;
 }
 
-.poker_img {
-    width: 100%;
+.poker-img {
+    width: 90%;
+    @include max-screen ($breakpoint-tablet){
+            width: 80%;
+    }
     @include max-screen ($breakpoint-mobile){
+            width: 60%;
+    }
+    @include max-screen (622px){
+            width: 80%;
+    }
+    @include max-screen (520px){
             width: 100%;
     }
 }
@@ -360,7 +348,7 @@ label {
     display: none;
 }
 
-#poker_cards {
+#poker-cards {
     display: flex;
     justify-content: space-around;
         @include max-screen ($breakpoint-mobile){
@@ -370,19 +358,19 @@ label {
         }
 }
 
-#btn_exchange, #result_btn {
+#btn-exchange, #result-btn {
     margin-top: 3rem;
         @include max-screen ($breakpoint-mobile){
             margin-top: 0;
         }
 }
 
-#pk_result {
+#pk-result {
     font-size: 18rem;
     display: none;
     text-shadow: 0 0 5px white;
         @include max-screen ($breakpoint-mobile){
-            font-size: 10rem;
+            font-size: 7rem;
         }
     margin: 0 auto;
 
