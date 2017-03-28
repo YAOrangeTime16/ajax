@@ -16,7 +16,7 @@ $(function(){
     $('#start').on('click', function(){
         $(this).delay(800).fadeOut('slow');
         $('.loading3').fadeIn('slow').delay(800).fadeOut('slow');
-        $('.after_loading3, #reload2').delay(1500).fadeIn();
+        $('.after-loading3, #reload2').delay(1500).fadeIn();
     }).on('click', function(){
         $.ajax({
             method: 'GET',
@@ -49,16 +49,16 @@ $(function(){
         cardsArray.map(card=>{
             cardsHTML+=`<div class="col-xs-4 col-sm-4 col-md-2">
                             <label for="${card.code}">
-                                <img class="poker_img" src='${card.image}' alt='${card.code}'></img>
+                                <img class="poker-img" src='${card.image}' alt='${card.code}'></img>
                                 <input id="${card.code}" type="checkbox" class="checkbox"  value="${card.code}">
                             </label>
                         </div>`;
-            $('#poker_cards').html(cardsHTML);
+            $('#poker-cards').html(cardsHTML);
         });
         //Add a button to html
-        let buttonToChange=`<input id="check_btn" type="button" value="Draw" class="btn btn-success">`;
-        $('#btn_exchange').html(buttonToChange);
-        $('#check_btn')
+        let buttonToChange=`<input id="check-btn" type="button" value="Draw" class="btn btn-success">`;
+        $('#btn-exchange').html(buttonToChange);
+        $('#check-btn')
         .on('click', checkSelectedCards)
         .on('click', discardCards)
         .on('click', addToDiscardPile)//Another AJAX call
@@ -141,17 +141,17 @@ $(function(){
         
         finalCardsArray.map(card=>{
             cardsHTML+=`<div class="col-xs-4 col-sm-4 col-md-2">
-                            <img class="poker_img" src='${card.image}' alt='${card.code}'></img>
+                            <img class="poker-img" src='${card.image}' alt='${card.code}'></img>
                         </div>`;
-            $('#poker_cards').html(cardsHTML);
+            $('#poker-cards').html(cardsHTML);
         });
         //A button to be added to the final hand
-        let buttonForResult=`<input id="result_btn" type="button" value="Result" class="btn btn-success">`;
-        $('#btn_exchange').html(buttonForResult);
+        let buttonForResult=`<input id="result-btn" type="button" value="Result" class="btn btn-success">`;
+        $('#btn-exchange').html(buttonForResult);
         
-        $('#result_btn').on('click', function(){
+        $('#result-btn').on('click', function(){
             $(this).hide();
-            $('#poker_cards').fadeOut('fast');
+            $('#poker-cards').fadeOut('fast');
         })
             .on('click', getResult)
             .on('click', printResult);
@@ -181,7 +181,7 @@ $(function(){
     };
     
     let printResult=()=>{
-        $('#pk_result').html(yourResult).hide().delay(1000).fadeIn('slow');
+        $('#pk-result').html(yourResult).hide().delay(1000).fadeIn('slow');
     };
 });
 },{}]},{},[1]);
