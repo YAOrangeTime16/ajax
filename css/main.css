@@ -42,7 +42,7 @@ html, body, main, nav, ul {
     .li_nav {
       width: 90%;
       margin: 1rem 2rem;
-      bottom: 18rem; } }
+      bottom: 20rem; } }
 
 #block_of_gamelist {
   display: none; }
@@ -67,15 +67,20 @@ a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent; }
 
+/* ===============
+    SVG 
+  ===============*/
 .decoFrame {
-  width: 70%;
+  width: 80%;
   margin: 1rem 0; }
+  @media screen and (max-width: 767px) {
+    .decoFrame {
+      width: 95%; } }
 
 .mysvg {
-  width: 90%;
+  width: 80%;
   height: 80%;
   position: relative;
-  bottom: 3rem;
   margin: 0 auto;
   display: flex;
   justify-content: center; }
@@ -89,12 +94,33 @@ a {
     .mysvg {
       margin: 0; } }
 
-/* ===============
-    SVG EXTERNAL FILE
-   ===============*/
 .cls-1, .cls-2 {
-  fill: #fff; }
+  fill: none;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  animation: DASH 4s ease-in 1s forwards;
+  -webkit-animation: DASH 4s ease-in 1s forwards; }
 
+@keyframes DASH {
+  0% {
+    stroke-dashoffset: 3000;
+    fill: rgba(255, 255, 255, 0); }
+  50% {
+    stroke-dashoffset: 2000;
+    fill: rgba(255, 255, 255, 0.3); }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white; } }
+@-webkit-keyframes DASH {
+  0% {
+    stroke-dashoffset: 3000;
+    fill: rgba(255, 255, 255, 0); }
+  50% {
+    stroke-dashoffset: 2000;
+    fill: rgba(255, 255, 255, 0.3); }
+  100% {
+    stroke-dashoffset: 0;
+    fill: white; } }
 /* ===============
     FOR ALL GAMES
    ===============*/
