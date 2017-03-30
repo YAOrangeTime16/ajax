@@ -5,20 +5,14 @@ $darkblue:#5c6bc0;
 $breakpoint-tablet: 960px;
 $breakpoint-mobile: 767px;
 $font-serif: 'IM Fell DW Pica', serif;
-$font-sans-s: 'Open Sans', arial;
+$font-sans-s: 'Khand', sans-serif;
 
-html { 
+html, body, main, nav, ul { 
     width: 100%;
-}
-
-body {
-       background-color: $lightgreen;
-}
-
-body, main, nav, ul, li {
-    font-family: $font-serif;
     margin: 0;
-    padding: 0;}
+    padding: 0;
+    font-family: $font-sans-s;
+}
 
 .background-img {
     position: relative;
@@ -27,14 +21,10 @@ body, main, nav, ul, li {
     background-image: url('../img/card.jpg');
     background-position: center;
     background-size: cover;
-    @include max-screen ($breakpoint-mobile){
-        background-img: url('../img/card-s.jpg');
-    }
+        @include max-screen ($breakpoint-mobile){
+            background-img: url('../img/card-s.jpg');
+        }
     z-index: 1;
-}
-
-nav {
-    margin: 0;
 }
 
 .ul_nav {
@@ -49,7 +39,6 @@ nav {
 
 .li_nav {
     list-style: none;
-    font-family: $font-serif;
     display: block;
     width: 30%;
     margin: auto;
@@ -60,11 +49,11 @@ nav {
     position: relative;
     bottom: 5rem;
     color: white;
-    @include max-screen ($breakpoint-mobile){
-        width: 90%;
-        margin: 1rem 2rem;
-        bottom: 18rem;
-    }
+        @include max-screen ($breakpoint-mobile){
+            width: 90%;
+            margin: 1rem 2rem;
+            bottom: 18rem;
+        }
     cursor: pointer;
 }
 
@@ -74,7 +63,6 @@ nav {
 
 .li_nav ul li {
     list-style: none;
-    font-family: $font-serif;
     font-size: 2.4rem;
     border-bottom: 0.8px solid #767676;
     background-color: #1a1a1a;
@@ -88,9 +76,10 @@ nav {
 }
 
 a {
-  color:$lightblue;
+    color:$lightblue;
+    font-size: 2rem;
     cursor: pointer;
-  text-decoration: none;
+    text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -117,6 +106,7 @@ a {
     display: flex;
     justify-content: center;
 }
+
 /* ===============
     SVG EXTERNAL FILE
    ===============*/
@@ -144,14 +134,14 @@ after_loading1, .after_loading2,.after_loading3{
 .btn-up{
     position: fixed;
     bottom: 8rem;
-    right: 0;
+    right: 1rem;
     z-index: 0;
 }
 
 .btn-down{
     position: fixed;
     bottom: 3rem;
-    right: 0;
+    right: 1rem;
 }
 
 /* ===============
@@ -178,12 +168,9 @@ after_loading1, .after_loading2,.after_loading3{
 
 #counter {
     height: 50%;
-    position: absolute;
-    bottom: 5rem;
     font-size: 20rem;
         @include max-screen ($breakpoint-mobile){
-            font-size: 15rem;
-            bottom: -3rem;
+            font-size: 10rem;
         }
 }
 
@@ -336,10 +323,10 @@ label {
     @include max-screen ($breakpoint-mobile){
             width: 60%;
     }
-    @include max-screen (622px){
+    @include max-screen (600px){
             width: 80%;
     }
-    @include max-screen (520px){
+    @include max-screen (498px){
             width: 100%;
     }
 }
@@ -373,5 +360,4 @@ label {
             font-size: 7rem;
         }
     margin: 0 auto;
-
 }

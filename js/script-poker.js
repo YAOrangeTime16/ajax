@@ -30,11 +30,15 @@ $(function(){
     $('#reload2').on('click', function(){
         location.reload(false);
     })
-
+    
+    let getUrl=(id, how, numberOfCards)=>{
+        return `https://deckofcardsapi.com/api/deck/${id}/${how}/?count=${numberOfCards}`;
+    };
+    
     //Draw five cards
     let playersHand=response=>{
         deckID=response.deck_id;
-        deckUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=5`;
+        deckUrl=getUrl(deckID, 'draw', 5);
         $.ajax({
             method: 'GET',
             url: deckUrl,
@@ -106,15 +110,15 @@ $(function(){
     //Final AJAX call
     let drawFinalHand=()=>{
         //draw new cards as many as discarded cards
-        deckUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=${howManyChange}`;
+        deckUrl=getUrl(deckID, 'draw', howManyChange);
         $.ajax({
             method: 'GET',
             url: deckUrl,
             dataType: 'json'
         })
-        .done(getFinalHand)//get the player's final hand
-        .done(adjustValueToPokerApi)//Adjusting the values to pokersolver API
-        .done(showFinalHand)//send final hand to HTML
+        .done(getFinalHand)
+        .done(adjustValueToPokerApi)
+        .done(showFinalHand)
         .fail(err=>err);
     };
     
@@ -129,7 +133,6 @@ $(function(){
     let showFinalHand=res=>{
         cardsHTML="";
         //Sorting cards
-        //ref: http://webdrawer.net/javascript/jssort.html (Japanese site)
         finalCardsArray.sort((a,b)=>{
             let aCode=a.code;
             let bCode=b.code;

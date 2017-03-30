@@ -9,7 +9,7 @@ Live Site:  https://yaorangetime16.github.io/ajax/
 This is a card game application which includes three simple card games. It is made with the help of the "deck of card" API returning response of json-file.
 This application calls the API using jQuery's `$.ajax()` method, and the API requires different URLs to be accessed for its json data, depending on e.g. how many cards the player wants to draw.
 
-In addition, there is another API (not ReST API) used in this application, which helps some functionalities of the game.
+In addition, there is another API (not ReST API) used in this application, which helps to show results of Five Card Draw (the third game in this app).
 
 ### APIs in this application
 * Deck of Cards (AJAX / Main)  
@@ -54,6 +54,9 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 [Qiita: website for programmers](http://qiita.com/kazu56/items/0d49adc864bed0ed4fa2) (Japanese)
 
 ### Wroking Process on this assignment
-I came up with some ideas about what my application should be doing, but it took time to find a right API, which wouldn't cause a Cross-browser problem. As I wanted to make something "fun" (skoj, kul, roligt!) anyway, so I decided to this gaming application. Then, I started listing up which functionalities I need to buid up, what should be shown on the website.  My first plan was just one simple game, but then, I added later two more games.  Coding itself was really interesting for me. I learned jQuery a lot through this assigment, and yes, it was a lot easier and less coding to create a dynamic website.  
+I came up with some ideas about what my application should be doing, but it took time to find a right API, which wouldn't cause a cross-browser problem. As I wanted to make something "fun" (skoj, kul, rolig!), so I decided to this gaming application. Then, I started listing up which functionalities I need to buid up, what should be shown on the website.  My first plan was just one simple game, but it was too simple to acheive the aim of this assignment so eventually I added two more games. Using jQuery made a lot easier to code and less complicated.
 
   As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could supposingly "watch" the file's updating). However, I haven't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp".
+  
+  ### Note
+  *bundle.js*  The script linked to "bundle.js" instead of "script-poker.js", as I used browserify.

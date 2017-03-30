@@ -1,13 +1,8 @@
-html {
-  width: 100%; }
-
-body {
-  background-color: #26a69a; }
-
-body, main, nav, ul, li {
-  font-family: "IM Fell DW Pica", serif;
+html, body, main, nav, ul {
+  width: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Khand", sans-serif; }
 
 .background-img {
   position: relative;
@@ -21,9 +16,6 @@ body, main, nav, ul, li {
     .background-img {
       background-img: url("../img/card-s.jpg"); } }
 
-nav {
-  margin: 0; }
-
 .ul_nav {
   display: flex;
   flex-direction: row;
@@ -35,7 +27,6 @@ nav {
 
 .li_nav {
   list-style: none;
-  font-family: "IM Fell DW Pica", serif;
   display: block;
   width: 30%;
   margin: auto;
@@ -58,7 +49,6 @@ nav {
 
 .li_nav ul li {
   list-style: none;
-  font-family: "IM Fell DW Pica", serif;
   font-size: 2.4rem;
   border-bottom: 0.8px solid #767676;
   background-color: #1a1a1a; }
@@ -72,6 +62,7 @@ nav {
 
 a {
   color: #039be5;
+  font-size: 2rem;
   cursor: pointer;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent; }
@@ -122,13 +113,13 @@ after_loading1, .after_loading2, .after_loading3 {
 .btn-up {
   position: fixed;
   bottom: 8rem;
-  right: 0;
+  right: 1rem;
   z-index: 0; }
 
 .btn-down {
   position: fixed;
   bottom: 3rem;
-  right: 0; }
+  right: 1rem; }
 
 /* ===============
    Game 1
@@ -152,13 +143,10 @@ after_loading1, .after_loading2, .after_loading3 {
 
 #counter {
   height: 50%;
-  position: absolute;
-  bottom: 5rem;
   font-size: 20rem; }
   @media screen and (max-width: 767px) {
     #counter {
-      font-size: 15rem;
-      bottom: -3rem; } }
+      font-size: 10rem; } }
 
 figcaption {
   font-size: 1.5rem; }
@@ -292,10 +280,10 @@ label {
   @media screen and (max-width: 767px) {
     .poker-img {
       width: 60%; } }
-  @media screen and (max-width: 622px) {
+  @media screen and (max-width: 600px) {
     .poker-img {
       width: 80%; } }
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 498px) {
     .poker-img {
       width: 100%; } }
 
