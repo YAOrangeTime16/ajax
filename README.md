@@ -41,9 +41,10 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 * Google Fonts
 
 #### Images
-* pixabay
-* [loadinfo](http://www.loadinfo.net/)
-* [Frame Design](http://frames-design.com/) (Japanese)
+* Background Images: pixabay
+* Gif Animation: [loadinfo](http://www.loadinfo.net/)
+* Logo Frame: [Frame Design](http://frames-design.com/) (Japanese)
+* SVG animation snippet: [a Designer's blog](http://www.brightonline.jp/web/html5/s17/) (Japanese)
 
 #### JS Codes
 * sorting array: 
