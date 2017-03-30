@@ -60,7 +60,5 @@ This application is coded with the help of jQuery. Using it made a lot easier to
 
   As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could supposingly "watch" the file's updating). However, I hadn't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp".
   
-  It was great that my supervisor (Jesper) gave me an advuce on effective codes.
-  
   ### Note
   *bundle.js*  The script linked to "bundle.js" instead of "script-poker.js" because of "browserify".
