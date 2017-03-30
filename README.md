@@ -54,11 +54,13 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 [Qiita: website for programmers](http://qiita.com/kazu56/items/0d49adc864bed0ed4fa2) (Japanese)
 
 ### Wroking Process on this assignment
-I came up with some ideas about what my application should be doing, but it took time to find a right API, which wouldn't cause a cross-browser problem. As I wanted to make something "fun" (skoj, kul, rolig!), so I decided to this gaming application. Then, I started listing up which functionalities I need to buid up, what should be shown on the website.  My first plan was just one simple game, but it was too simple to acheive the aim of this assignment so I ended up adding two more games. 
+I came up with some ideas about what my application should be doing, but it took time to find a right API, which wouldn't cause a cross-browser problem. As I wanted to make something "fun" (skoj, kul, rolig!), so I decided to this gaming application. Then, I started listing up which functionalities should be buit up, what should be shown on the website.  My first plan was just one simple game, but it was too simple to suffice the aim of this assignment so I ended up adding two more games. 
 
 This application is coded with the help of jQuery. Using it made a lot easier to code and less complicated.
 
-  As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could supposingly "watch" the file's updating). However, I haven't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp".
+  As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could supposingly "watch" the file's updating). However, I hadn't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp".
+  
+  It was great that my supervisor (Jesper) gave me an advuce on effective codes.
   
   ### Note
   *bundle.js*  The script linked to "bundle.js" instead of "script-poker.js" because of "browserify".
