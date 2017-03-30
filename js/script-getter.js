@@ -91,7 +91,7 @@ $(function(){
     
     let showFinalScore=(score)=>{
        if(click===0){  
-            $('#counter').hide().delay(2500).fadeIn('slow').html(score);
+            $('#counter').hide().html(score).delay(3500).fadeIn('slow');
             $('#card1, #card2, #message').delay(500).fadeOut('slow');
         }
     };

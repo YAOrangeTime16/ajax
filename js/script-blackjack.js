@@ -30,9 +30,13 @@ $(function(){
         return deckID;
     };
     
+    let getUrl=(id, numberOfCards)=>{
+        return `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${numberOfCards}`;
+    };
+    
     //Draw cards based on the "deckID"
     let drawTwoCards=()=>{
-        let drawTwoUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=2`;
+        let drawTwoUrl=getUrl(deckID, 2);
         $.ajax({
             method: 'GET',
             url: drawTwoUrl,
@@ -98,7 +102,7 @@ $(function(){
     
     //If the player adds a card, these functions should be called
     let drawOneMore=()=>{
-        let drawOneUrl=`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`;
+        let drawOneUrl=getUrl(deckID, 1);
         $.ajax({
             method: 'GET',
             url: drawOneUrl,
@@ -137,7 +141,7 @@ $(function(){
         };  
         //Saving result message depending on player's score
         if(points===21){
-           result='BLACKJACK';
+           result='Blackjack';
         }else if(points>=22){
             result='Bust';
         } else {

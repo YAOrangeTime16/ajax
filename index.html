@@ -3,11 +3,13 @@
     <head>
         <meta charset=utf-8>
         <!--Responsive-->
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0">
         <title>Web API</title>
         <!-- CSS Stylesheets -->
         <link type="text/css" rel="stylesheet" href="css/normalize.css">
         <link type="text/css" rel="stylesheet" href="css/main.css">
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Khand" rel="stylesheet">
         <!-- Bootstrap: Latest compiled and minified CSS -->
         <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
@@ -44,7 +46,7 @@
                         </div>
                         <div class="panel-body">
                             <ol>
-                                <li>Draw a pair of cards by clicking the draw-cards button at the buttom of page</li>
+                                <li>Draw a pair of cards by clicking the draw-cards button at the game section</li>
                                 <li>You draw cards five times per game. If your cards have a matching number or suit, then you get extra poits.
                                     <ol>
                                         <li class="li_rule">If both cards have the same number, you get <strong>30</strong> points</li>
@@ -64,14 +66,15 @@
                         <div class="panel-body">
                             <ol>
                                 <li>The aim of this game is to acheive a score 21. </li>
-                                <li>You get a pair of card at the first draw, and then you can add one card or more, as you wish, to get the score close to 21
+                                <li>You get a pair of card with the first draw, and then you can add one card or more, as you wish, to get the score close to 21
                                     <ol>
-                                        <li class="li_rule">"Aces" are worth <strong>11</strong> (you cannot choose between 1 and 11 like the blackjack rule)</li>
+                                        <li class="li_rule">"Aces" are worth <strong>11</strong> (you cannot choose between 1 and 11 like the ordinary blackjack rule)</li>
                                         <li class="li_rule">"Jacks", "Queens", and "Kings" are worth <strong>10</strong>
                                         </li>
                                         <li class="li_rule">The others count face value</li>
                                     </ol>
                                 </li>
+                                <li>When the score hits exact 21, you get <strong>Blackjack</strong></li>
                                 <li>If the score excesses over 21, it returns <strong>Bust</strong></li>
                             </ol>
                             <a id="anchor_g2">Play This Game</a>
@@ -83,10 +86,10 @@
                         </div>
                         <div class="panel-body">
                             <ol>
-                                <li>Five Card Draw is one of variants of poker</li>
-                                <li>You get five cards in your hand</li>
-                                <li>Check cards which you wish to replace with new cards, then click "Draw"</li>
-                                <li>When you click "result", you get the result of your hand
+                                <li>Five Card Draw is a variant of poker games</li>
+                                <li>You get five cards in your hand with a click of "Start"</li>
+                                <li>Choose cards which you wish to replace with new cards, then click "Draw"</li>
+                                <li>"Result" shows the result of your hand
                                     <ol>
                                         <li class="li_rule">Royal flush (less than 0.001%)</li>
                                         <li class="li_rule">Straight flush (less than 0.002%)
@@ -110,32 +113,33 @@
             </section>
         <!-- GAMES -->
             <section id="gameSpace" class="row">
-                <div class="col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                     <h2 class="page-header">Select Game</h2>
                 </div>
             <!-- GETTER -->
-                <article id="getter" class="col-xs-12 col-sm-12 col-md-12 container-fluid">
+                <article id="getter" class=" col-xs-12 col-sm-12 col-md-12">
                     <h3 class="game-title">Point Getter</h3>
                     <button type="button" id="open" class="btn btn-success">Draw Cards</button>
                     <input type="button" class="btn btn-default" id="reload" value="New Game">
                     <div class="loading1">
-                        <img src="img/loading.gif" alt="loading...">Loading cards...
+                        <img src="img/loading-b.gif" alt="loading...">Loading cards...
                     </div>
-                    <div class="message-position row">
-                            <div id="message" class="col-md-12 text-center"></div>
+                    <div id="message" class="col-md-12 text-center">
                     </div>
-                    <div id="cardTable-getter" class="container col-xs-12 col-sm-12 col-md-12">
+                    <div id="cardTable-getter" class="container">
                         <div id="card1" class="row"></div>
                         <div id="card2" class="row"></div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="counter"></div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="counter"></div>
+                        </div>
                     </div>
                 </article>
             <!-- TWENTY ONE -->
-                <article id="twentyone" class="col-xs-12 col-sm-12 col-md-12 container-fluid">
+                <article id="twentyone" class="col-xs-12 col-sm-12 col-md-12">
                     <h3 class="game-title">Twenty One</h3>
                     <input type="button" id="open-bj" class="btn btn-success" value="Draw Cards">
                     <input type="button" class="btn btn-default" id="reload-bj" value="New Game">
-                    <div class="loading2"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
+                    <div class="loading2"><img src="img/loading-b.gif" alt="loading...">Loading Cards...</div>
                     <div class="cardTable-bj row col-xs-12 col-sm-12 col-md-12 after-loading2">
                         <div id="bj-cards" class="bjFigure"></div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="bj-counter"></div>
@@ -143,18 +147,18 @@
                     </div>
                 </article>
             <!-- FIVE CARD DRAW -->
-                <article id="fivecard" class="col-xs-12 col-sm-12 col-md-12 container-fluid">
+                <article id="fivecard" class="col-xs-12 col-sm-12 col-md-12">
                     <h3 class="game-title">Five Card Draw</h3>
                     <input type="button" id="start" class="btn btn-success" value="start">
                     <input type="button" class="btn btn-default" id="reload2" value="New Game">
-                    <div class="loading3"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
-                    <div class="cardTable-poker after-loading3">
+                    <div class="loading3"><img src="img/loading-b.gif" alt="loading...">Loading Cards...</div>
+                    <div class="cardTable-poker container after-loading3">
                         <div id="poker-cards" class="row">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="pk-result">
                         </div>
                         <div class="row">
-                            <div id="btn-exchange" class="col-md-12 text-center after-loading3"></div>
+                            <div id="btn-exchange" class="col-md-12 text-center"></div>
                         </div>
                     </div>
                 </article>
@@ -166,8 +170,8 @@
                 <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
             </button>
         </main>
-        <footer>
-            web application created by Yoko Andrae @ Nackademin 2017
+        <footer class="text-center">
+            created by Yoko Andrae @ Nackademin 2017
         </footer>
         <script src="js/script.js"></script>
         <script src="js/script-getter.js"></script>
