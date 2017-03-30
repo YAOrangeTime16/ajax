@@ -117,7 +117,12 @@ a {
 /* ===============
     FOR ALL GAMES
    ===============*/
-
+#gameSpace {
+    color: white;
+    .page-header{
+        color: black;
+    }
+}
 .game-title{
     margin-bottom: 3rem;
 }
@@ -149,9 +154,9 @@ after_loading1, .after_loading2,.after_loading3{
    ===============*/
 #getter{
     height: 100vh;
-    background-image: url('../img/background-one-w.png');
+    background-image: url('../img/background-one.png');
         @include max-screen ($breakpoint-mobile){
-            background-image: url('../img/background-one-mb.png');
+            background-image: url('../img/background-one-b-mb.png');
             background-position: left;
         }
     background-position: right;
@@ -160,8 +165,6 @@ after_loading1, .after_loading2,.after_loading3{
 }
 
 #cardTable-getter{
-    position: absolute;
-    top: 22rem;
     display: flex;
     justify-content: center;
 }
@@ -228,10 +231,10 @@ figcaption {
    ===============*/
 #twentyone{
     height: 100vh;
-    background-image: url('../img/background-two-w.png');
+    background-image: url('../img/background-two.png');
     background-position: center;
     @include max-screen ($breakpoint-mobile){
-        background-image: url('../img/background-two-mb.png');
+        background-image: url('../img/background-two-b-mb.png');
     }
     background-repeat: no-repeat;
     background-size: cover;
@@ -294,10 +297,10 @@ figcaption {
    ===============*/
 #fivecard{
     height: 100vh;
-    background-image: url('../img/background-three-w.png');
+    background-image: url('../img/background-three.png');
     background-position: right;
         @include max-screen ($breakpoint-mobile){
-            background-image: url('../img/background-three-mb.png');
+            background-image: url('../img/background-three-b-mb.png');
         }
     background-repeat: no-repeat;
     background-size: cover;
@@ -313,10 +316,12 @@ figcaption {
 
 label {
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .poker-img {
     width: 90%;
+    margin: 1rem 0 0 1rem;
     @include max-screen ($breakpoint-tablet){
             width: 80%;
     }
@@ -355,7 +360,6 @@ label {
 #pk-result {
     font-size: 18rem;
     display: none;
-    text-shadow: 0 0 5px white;
         @include max-screen ($breakpoint-mobile){
             font-size: 7rem;
         }

@@ -98,6 +98,11 @@ a {
 /* ===============
     FOR ALL GAMES
    ===============*/
+#gameSpace {
+  color: white; }
+  #gameSpace .page-header {
+    color: black; }
+
 .game-title {
   margin-bottom: 3rem; }
 
@@ -126,18 +131,16 @@ after_loading1, .after_loading2, .after_loading3 {
    ===============*/
 #getter {
   height: 100vh;
-  background-image: url("../img/background-one-w.png");
+  background-image: url("../img/background-one.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover; }
   @media screen and (max-width: 767px) {
     #getter {
-      background-image: url("../img/background-one-mb.png");
+      background-image: url("../img/background-one-b-mb.png");
       background-position: left; } }
 
 #cardTable-getter {
-  position: absolute;
-  top: 22rem;
   display: flex;
   justify-content: center; }
 
@@ -195,13 +198,13 @@ figcaption {
    ===============*/
 #twentyone {
   height: 100vh;
-  background-image: url("../img/background-two-w.png");
+  background-image: url("../img/background-two.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; }
   @media screen and (max-width: 767px) {
     #twentyone {
-      background-image: url("../img/background-two-mb.png"); } }
+      background-image: url("../img/background-two-b-mb.png"); } }
 
 .cardTable-bj {
   position: absolute;
@@ -254,13 +257,13 @@ figcaption {
    ===============*/
 #fivecard {
   height: 100vh;
-  background-image: url("../img/background-three-w.png");
+  background-image: url("../img/background-three.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover; }
   @media screen and (max-width: 767px) {
     #fivecard {
-      background-image: url("../img/background-three-mb.png"); } }
+      background-image: url("../img/background-three-b-mb.png"); } }
 
 .cardTable-poker {
   position: absolute;
@@ -270,10 +273,12 @@ figcaption {
       top: 20rem; } }
 
 label {
-  cursor: pointer; }
+  cursor: pointer;
+  vertical-align: middle; }
 
 .poker-img {
-  width: 90%; }
+  width: 90%;
+  margin: 1rem 0 0 1rem; }
   @media screen and (max-width: 960px) {
     .poker-img {
       width: 80%; } }
@@ -308,7 +313,6 @@ label {
 #pk-result {
   font-size: 18rem;
   display: none;
-  text-shadow: 0 0 5px white;
   margin: 0 auto; }
   @media screen and (max-width: 767px) {
     #pk-result {

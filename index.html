@@ -46,7 +46,7 @@
                         </div>
                         <div class="panel-body">
                             <ol>
-                                <li>Draw a pair of cards by clicking the draw-cards button at the buttom of page</li>
+                                <li>Draw a pair of cards by clicking the draw-cards button at the game section</li>
                                 <li>You draw cards five times per game. If your cards have a matching number or suit, then you get extra poits.
                                     <ol>
                                         <li class="li_rule">If both cards have the same number, you get <strong>30</strong> points</li>
@@ -66,15 +66,15 @@
                         <div class="panel-body">
                             <ol>
                                 <li>The aim of this game is to acheive a score 21. </li>
-                                <li>You get a pair of card at the first draw, and then you can add one card or more, as you wish, to get the score close to 21
+                                <li>You get a pair of card with the first draw, and then you can add one card or more, as you wish, to get the score close to 21
                                     <ol>
-                                        <li class="li_rule">"Aces" are worth <strong>11</strong> (you cannot choose between 1 and 11 like the blackjack rule)</li>
+                                        <li class="li_rule">"Aces" are worth <strong>11</strong> (you cannot choose between 1 and 11 like the ordinary blackjack rule)</li>
                                         <li class="li_rule">"Jacks", "Queens", and "Kings" are worth <strong>10</strong>
                                         </li>
                                         <li class="li_rule">The others count face value</li>
                                     </ol>
                                 </li>
-                                <li>When the score is exact 21, you get <strong>Blackjack</strong></li>
+                                <li>When the score hits exact 21, you get <strong>Blackjack</strong></li>
                                 <li>If the score excesses over 21, it returns <strong>Bust</strong></li>
                             </ol>
                             <a id="anchor_g2">Play This Game</a>
@@ -86,9 +86,9 @@
                         </div>
                         <div class="panel-body">
                             <ol>
-                                <li>Five Card Draw is a variant of poker</li>
-                                <li>Click "start", you get five cards in your hand</li>
-                                <li>Click cards which you wish to replace with new cards, then click "Draw"</li>
+                                <li>Five Card Draw is a variant of poker games</li>
+                                <li>You get five cards in your hand with a click of "Start"</li>
+                                <li>Choose cards which you wish to replace with new cards, then click "Draw"</li>
                                 <li>"Result" shows the result of your hand
                                     <ol>
                                         <li class="li_rule">Royal flush (less than 0.001%)</li>
@@ -113,7 +113,7 @@
             </section>
         <!-- GAMES -->
             <section id="gameSpace" class="row">
-                <div class=" col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
                     <h2 class="page-header">Select Game</h2>
                 </div>
             <!-- GETTER -->
@@ -122,7 +122,7 @@
                     <button type="button" id="open" class="btn btn-success">Draw Cards</button>
                     <input type="button" class="btn btn-default" id="reload" value="New Game">
                     <div class="loading1">
-                        <img src="img/loading.gif" alt="loading...">Loading cards...
+                        <img src="img/loading-b.gif" alt="loading...">Loading cards...
                     </div>
                     <div id="message" class="col-md-12 text-center">
                     </div>
@@ -139,7 +139,7 @@
                     <h3 class="game-title">Twenty One</h3>
                     <input type="button" id="open-bj" class="btn btn-success" value="Draw Cards">
                     <input type="button" class="btn btn-default" id="reload-bj" value="New Game">
-                    <div class="loading2"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
+                    <div class="loading2"><img src="img/loading-b.gif" alt="loading...">Loading Cards...</div>
                     <div class="cardTable-bj row col-xs-12 col-sm-12 col-md-12 after-loading2">
                         <div id="bj-cards" class="bjFigure"></div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="bj-counter"></div>
@@ -151,14 +151,14 @@
                     <h3 class="game-title">Five Card Draw</h3>
                     <input type="button" id="start" class="btn btn-success" value="start">
                     <input type="button" class="btn btn-default" id="reload2" value="New Game">
-                    <div class="loading3"><img src="img/loading.gif" alt="loading...">Loading Cards...</div>
-                    <div class="cardTable-poker after-loading3">
+                    <div class="loading3"><img src="img/loading-b.gif" alt="loading...">Loading Cards...</div>
+                    <div class="cardTable-poker container after-loading3">
                         <div id="poker-cards" class="row">
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center" id="pk-result">
                         </div>
                         <div class="row">
-                            <div id="btn-exchange" class="col-md-12 text-center after-loading3"></div>
+                            <div id="btn-exchange" class="col-md-12 text-center"></div>
                         </div>
                     </div>
                 </article>
@@ -176,7 +176,7 @@
         <script src="js/script.js"></script>
         <script src="js/script-getter.js"></script>
         <script src="js/script-blackjack.js"></script>
-        <script src="js/script-poker.js"></script>
+        <script src="js/bundle.js"></script>
         <script src="js/pokersolver.js"></script>
     </body>
 </html>

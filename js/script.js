@@ -1,4 +1,4 @@
-$(function(){
+$(function(){  
     $('#rules').on('click', function(){
         let toRules=$('.content_rule').offset().top;
         $('html, body').animate({scrollTop: toRules}, 'fast');
