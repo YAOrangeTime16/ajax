@@ -10,20 +10,26 @@ $(function(){
     let adjustedArray;
     let yourResult;
     
-    //start a poker game
+/*================
+  First AJAX call
+  ================*/
+    
     //Get deck ID... in this case 1 deck is used for each play
-    $('#start').on('click', function(){
-        $(this).delay(800).fadeOut('slow');
-        $('.loading3').fadeIn('slow').delay(800).fadeOut('slow');
-        $('#reload2').delay(1500).fadeIn();
-    }).on('click', function(){
-        $.ajax({
-            method: 'GET',
-            url: 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
-            dataType: 'json'
+    $('#start')
+        .on('click', function(){
+            $(this).delay(800).fadeOut('slow');
+            $('.loading3').fadeIn('slow').delay(800).fadeOut('slow');
+            $('#reload2').delay(1500).fadeIn();
         })
-        .done(playersHand)   //Second AJAX call
-        .fail(err=>err);
+        .on('click', function(){
+            $.ajax({
+                method: 'GET',
+                url: 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
+                dataType: 'json'
+            })
+            .done(getDeckId)
+            .done(playersHand)   //Second AJAX call
+            .fail(err=>err);
     });
     
     //Reload the page from the chache
@@ -31,19 +37,26 @@ $(function(){
         location.reload(false);
     })
     
-    let getUrl=(id, how, numberOfCards)=>{
-        return `https://deckofcardsapi.com/api/deck/${id}/${how}/?count=${numberOfCards}`;
+    let getUrl=(id, method, numberOfCards)=>{
+        return `https://deckofcardsapi.com/api/deck/${id}/${method}/?count=${numberOfCards}`;
     };
     
-    //Draw five cards
+    let getDeckId=(res)=>{
+        deckID=res.deck_id;
+        return deckID;
+    };
+    
+/*================
+  Second AJAX call
+  ================*/
     let playersHand=response=>{
-        deckID=response.deck_id;
         deckUrl=getUrl(deckID, 'draw', 5);
         $.ajax({
             method: 'GET',
             url: deckUrl,
             dataType: 'json'
-        }).done(showPlayersHand)
+        })
+        .done(showPlayersHand)
         .fail(err=>err);
     };
 
@@ -79,7 +92,6 @@ $(function(){
     //discard the selected cards
     let discardCards=()=>{
         //remove selected cards from the "playershand"
-        //add them to the "discard" pile as well
         let checkHowMany=cardsArray.length;
         getValue.map(val=>{
             for(let i=cardsArray.length-1; i>=0; i--){
@@ -93,8 +105,10 @@ $(function(){
         console.log(`swapping ${howManyChange} cards`);
     };
     
+/*================
+  Third AJAX call
+================*/
     //Add discarded cards to the "discard" pile
-    //<<base URL>>/deck/<<deck_id>>/pile/<<pile_name>>/add/?cards=<<Cards' codes>>
     let addToDiscardPile=()=>{
         let cardParam=getValue.join(',');
         let pileUrl=`https://deckofcardsapi.com/api/deck/${deckID}/pile/discard/add/?cards=${cardParam}`;
@@ -107,7 +121,9 @@ $(function(){
         .fail(err=>err);
     };
     
-    //Final AJAX call
+/*================
+  Final AJAX call
+================*/
     let drawFinalHand=()=>{
         //draw new cards as many as discarded cards
         deckUrl=getUrl(deckID, 'draw', howManyChange);
@@ -147,15 +163,16 @@ $(function(){
                         </div>`;
             $('#poker-cards').html(cardsHTML);
         });
-    //A button to be added to the final hand
-    let buttonForResult=`<input id="result-btn" type="button" value="Result" class="btn btn-success">`;
-    $('#btn-exchange').html(buttonForResult);
-    $('#result-btn').on('click', function(){
-        $(this).hide();
-        $('#poker-cards').fadeOut('fast');
-    })
-        .on('click', getResult)
-        .on('click', printResult);
+        
+        //A button to be added to the final hand
+        let buttonForResult=`<input id="result-btn" type="button" value="Result" class="btn btn-success">`;
+        $('#btn-exchange').html(buttonForResult);
+        $('#result-btn').on('click', function(){
+            $(this).hide();
+            $('#poker-cards').fadeOut('fast');
+        })
+            .on('click', getResult)
+            .on('click', printResult);
     };
     
     //Adjusting the values to pokersolver API

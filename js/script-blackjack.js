@@ -8,7 +8,9 @@ $(function(){
     let newCard;
     let result;
     
-    //start game
+/*================
+  First AJAX call
+  ================*/
     $('#open-bj').on('click', function(){
         $(this).fadeOut();
         $('.loading2').fadeIn('slow').delay(800).fadeOut('slow');
@@ -24,8 +26,7 @@ $(function(){
         .fail(err=>err);
     });
     
-    
-    let getDeckId=(res)=>{
+    let getDeckId=res=>{
         deckID=res.deck_id;
         return deckID;
     };
@@ -38,7 +39,11 @@ $(function(){
         return `<figure>
                     <img class="bj-img" src="${cardObject.image}" alt="${cardObject.code}">
                 </figure>`;
-    }
+    };
+    
+/*================
+  Second AJAX call
+  ================*/
     
     //Draw cards based on the "deckID"
     let drawTwoCards=()=>{
@@ -54,7 +59,7 @@ $(function(){
         .fail(err=>err);
     };
 
-    let showHand=(res)=>{
+    let showHand=res=>{
         cardArray=res.cards;
         cardArray.map(card=>{
             printToHtml+=setCardImage(card);
@@ -104,6 +109,10 @@ $(function(){
         });
     };
     
+    
+/*================
+  Third AJAX call
+  ================*/
     //If the player adds a card, these functions should be called
     let drawOneMore=()=>{
         let drawOneUrl=setUrl(deckID, 1);
@@ -117,7 +126,7 @@ $(function(){
         .done(countFinalPoint);
     };
     
-    let getFinalHand=(res)=>{
+    let getFinalHand=res=>{
         newCard=res.cards[0];
         cardArray.push(newCard);
         return cardArray;
@@ -157,6 +166,7 @@ $(function(){
         $('#bj-counter').html(result).delay(700).fadeIn('slow');
     };
     
+    //Reload the page
     $('#reload-bj').on('click', function(){
         location.reload(false);
     });
