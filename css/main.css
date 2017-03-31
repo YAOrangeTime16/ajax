@@ -24,6 +24,9 @@ html, body, main, nav, ul {
   @media screen and (max-width: 767px) {
     .ul_nav {
       flex-direction: column; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .ul_nav {
+      flex-direction: row; } }
 
 .li_nav {
   list-style: none;
@@ -43,6 +46,9 @@ html, body, main, nav, ul {
       width: 90%;
       margin: 1rem 2rem;
       bottom: 20rem; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .li_nav {
+      bottom: 2rem; } }
 
 #block_of_gamelist {
   display: none; }
@@ -93,6 +99,10 @@ a {
   @media screen and (max-width: 767px) {
     .mysvg {
       margin: 0; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .mysvg {
+      height: 70%;
+      bottom: 0; } }
 
 .cls-1, .cls-2 {
   fill: none;
@@ -168,6 +178,7 @@ after_loading1, .after_loading2, .after_loading3 {
 
 #cardTable-getter {
   display: flex;
+  flex-direction: row;
   justify-content: center; }
 
 #counter {
@@ -177,38 +188,26 @@ after_loading1, .after_loading2, .after_loading3 {
     #counter {
       font-size: 10rem; } }
 
-figcaption {
-  font-size: 1.5rem; }
-
-#card1, #card2 {
-  height: 35rem;
-  margin: 0 1rem; }
-  @media screen and (max-width: 960px) {
-    #card1, #card2 {
-      height: 25rem; } }
-  @media screen and (max-width: 767px) {
-    #card1, #card2 {
-      height: 20rem; } }
-  @media screen and (max-width: 767px) {
-    #card1, #card2 {
-      margin: 0; } }
-  #card1 .card_img, #card1 figcaption, #card2 .card_img, #card2 figcaption {
-    margin: 1rem auto; }
-
 .card-img {
-  margin: 0 1rem; }
+  margin: 1rem; }
   @media screen and (max-width: 960px) {
     .card-img {
       width: auto; } }
   @media screen and (max-width: 767px) {
     .card-img {
+      margin-left: auto;
+      margin-right: auto;
       width: 70%; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .card-img {
+      width: 45%; } }
 
-#c1Fig, #c2Fig {
+.figure-getter {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  margin-top: 3rem; }
+  text-align: center; }
+  .figure-getter figcaption {
+    font-size: 1.5rem; }
 
 #reload {
   display: none;
@@ -218,6 +217,10 @@ figcaption {
   font-size: 5rem;
   height: 10%;
   margin-top: 3rem; }
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  #message {
+    margin-top: 0;
+    font-size: 3rem; } }
 
 /* ===============
    Game 2
@@ -232,43 +235,42 @@ figcaption {
     #twentyone {
       background-image: url("../img/background-two-b-mb.png"); } }
 
-.cardTable-bj {
-  position: absolute;
-  top: 10rem; }
-  @media screen and (max-width: 767px) {
-    .cardTable-bj {
-      top: 15rem; } }
-
 .btn {
   margin: 0 1rem; }
 
 .optionalButton {
   display: flex;
   justify-content: center;
-  margin: 3rem; }
+  margin: 2rem; }
 
 .bjFigure {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-left: 3rem; }
+  text-align: center;
+  padding-top: 10rem; }
+  @media screen and (max-width: 767px) {
+    .bjFigure {
+      padding-top: 4rem; } }
 
 .bj-img {
   margin: 0 1rem; }
   @media screen and (max-width: 960px) {
     .bj-img {
-      width: auto;
-      margin-top: 1rem; } }
+      width: auto; } }
   @media screen and (max-width: 767px) {
     .bj-img {
       width: 70%; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .bj-img {
+      width: 45%; } }
 
 #bj-counter {
   font-size: 20rem;
   display: none; }
   @media screen and (max-width: 767px) {
     #bj-counter {
+      margin-top: 7rem;
       font-size: 7rem; } }
   @media screen and (max-width: 360px) {
     #bj-counter {
@@ -297,6 +299,9 @@ figcaption {
   @media screen and (max-width: 767px) {
     .cardTable-poker {
       top: 20rem; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .cardTable-poker {
+      top: 17rem; } }
 
 label {
   cursor: pointer;
@@ -311,6 +316,10 @@ label {
   @media screen and (max-width: 767px) {
     .poker-img {
       width: 60%; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    .poker-img {
+      width: 80%; } }
+
   @media screen and (max-width: 600px) {
     .poker-img {
       width: 80%; } }
@@ -329,12 +338,19 @@ label {
       flex-wrap: wrap;
       position: relative;
       top: -3rem; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    #poker-cards {
+      flex-wrap: nowrap; } }
 
 #btn-exchange, #result-btn {
   margin-top: 3rem; }
   @media screen and (max-width: 767px) {
     #btn-exchange, #result-btn {
       margin-top: 0; } }
+  @media only screen and (max-width: 767px) and (orientation: landscape) {
+    #btn-exchange, #result-btn {
+      position: relative;
+      bottom: 1rem; } }
 
 #pk-result {
   font-size: 18rem;
