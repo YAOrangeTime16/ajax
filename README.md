@@ -15,9 +15,8 @@ In addition, there is another API (not ReST API) used in this application, which
 * Deck of Cards (AJAX / Main API)  
 https://deckofcardsapi.com/
 
-* Pokersolver (installed by npm / Extra API)  
+* Pokersolver (installed by npm / Secondary API)  
 https://github.com/goldfire/pokersolver  
-This is a supplementary API for this application.
 It helps to get results of "Five Card Draw" where its coding is far complicated.
 
 ### Tools and Technologies
@@ -27,12 +26,12 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 |SVG|Illustrator|
 |Coding|Brackets|
 |CSS|Sass, Bootstrap|
-|Javascript|jQuery|
+|Javascript, AJAX|jQuery|
 |extra API|npm browserify|
 |Version Control|GitHub|
 |Planning|Paper & Pen|
 
-### References
+### Scources
 
 #### API
 * [Public APIs by toddmotto @ GitHub](https://github.com/toddmotto/public-apis)
@@ -44,7 +43,7 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 * Background Images: pixabay
 * Gif Animation: [loadinfo](http://www.loadinfo.net/)
 * Logo Frame: [Frame Design](http://frames-design.com/) (Japanese)
-* SVG animation snippet: [a Designer's blog](http://www.brightonline.jp/web/html5/s17/) (Japanese)
+* SVG CSS animation snippet: [a Designer's blog](http://www.brightonline.jp/web/html5/s17/) (Japanese)
 
 #### JS Codes
 * sorting array: 
@@ -55,11 +54,13 @@ It helps to get results of "Five Card Draw" where its coding is far complicated.
 [Qiita: website for programmers](http://qiita.com/kazu56/items/0d49adc864bed0ed4fa2) (Japanese)
 
 ### Wroking Process on this assignment
-I came up with some ideas about what my application should be doing, but it took time to find a right API, which wouldn't cause a cross-browser problem. As I wanted to make something "fun" (skoj, kul, rolig!), so I decided to this gaming application. Then, I started listing up which functionalities should be buit up, what should be shown on the website.  My first plan was just one simple game, but it was too simple to suffice the aim of this assignment so I ended up adding two more games. 
+I came up with some ideas about what my application should be doing, but it took fairly long time to find a right API, which wouldn't cause a cross-browser problem. Although I read about jsonp and tried some, I belived that it would be safer to avoid such APIs for this assignment (for the sake of focusing on Ajax coding). Then, I finally found this API.  
 
-This application is coded with the help of jQuery. Using it made a lot easier to code and less complicated.
+I started listing up *which functionalities should be buit up* and *what should be shown on the website*.  My first plan was just one simple game, but it was too simple to suffice the aim of this assignment so I ended up adding two more games.
 
-  As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could supposingly "watch" the file's updating). However, I hadn't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp".
+This application is coded with the help of jQuery. Using it made a lot easier and less complicated to write codes. I learned this syntax of jQuery, `$(function(){})`,  worked as a module (a self-invoking function).
+
+As I used a secondary API which required "browserify" to work on browsers, I tried to use "gulp" (there was "gulp-browserify" that could *watch* the file's updating). However, I hadn't really understood as much as I could manipulate well, so I just gave up using it. If I could have more time, then I would have learned more about "gulp" and made use of it.
   
   ### Note
-  *bundle.js*  The script linked to "bundle.js" instead of "script-poker.js" because of "browserify".
+  The website has a script linked to *bundle.js* instead of *script-poker.js* because of using "browserify".

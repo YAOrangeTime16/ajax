@@ -30,13 +30,19 @@ $(function(){
         return deckID;
     };
     
-    let getUrl=(id, numberOfCards)=>{
+    let setUrl=(id, numberOfCards)=>{
         return `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${numberOfCards}`;
     };
     
+    let setCardImage=cardObject=>{
+        return `<figure>
+                    <img class="bj-img" src="${cardObject.image}" alt="${cardObject.code}">
+                </figure>`;
+    }
+    
     //Draw cards based on the "deckID"
     let drawTwoCards=()=>{
-        let drawTwoUrl=getUrl(deckID, 2);
+        let drawTwoUrl=setUrl(deckID, 2);
         $.ajax({
             method: 'GET',
             url: drawTwoUrl,
@@ -51,9 +57,7 @@ $(function(){
     let showHand=(res)=>{
         cardArray=res.cards;
         cardArray.map(card=>{
-            printToHtml+=`<figure>
-                            <img class="bj-img" src="${card.image}" alt="${card.code}">
-                        </figure>`;
+            printToHtml+=setCardImage(card);
             return printToHtml;
         });
         cardTable.hide().delay(1200).fadeIn().html(printToHtml); 
@@ -102,26 +106,25 @@ $(function(){
     
     //If the player adds a card, these functions should be called
     let drawOneMore=()=>{
-        let drawOneUrl=getUrl(deckID, 1);
+        let drawOneUrl=setUrl(deckID, 1);
         $.ajax({
             method: 'GET',
             url: drawOneUrl,
             dataType: 'json'
         })
-        .done(res=>{
-            newCard=res.cards[0];
-            cardArray.push(newCard);
-            return cardArray;
-        })
+        .done(getFinalHand)
         .done(showFinalCards)
         .done(countFinalPoint);
     };
     
+    let getFinalHand=(res)=>{
+        newCard=res.cards[0];
+        cardArray.push(newCard);
+        return cardArray;
+    };
+    
     let showFinalCards=()=>{
-            let appendNew=`<figure>
-                            <img class="bj-img" src="${newCard.image}" alt="${newCard.code}">
-                        </figure>`;
-        cardTable.append(appendNew);
+        cardTable.append(setCardImage(newCard));
     };
     
     let countFinalPoint=()=>{
